@@ -16,7 +16,7 @@ jobs:
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
       - uses: actions/checkout@v4
-      - run: car go.mod
+      - run: cat go.mod
       - run: go test -v ./...
       - name: Approve a PR
         run: gh pr review --approve "$PR_URL"
