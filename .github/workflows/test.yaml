@@ -1,6 +1,9 @@
-name: Dependabot auto-merge
+name: Test
 
 on:
+  push:
+    branches:
+      - "**"
   pull_request:
     branches:
       - main
@@ -14,6 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.actor == 'dependabot[bot]'
     steps:
+      - uses: actions/checkout@v4
+      - run: cat go.mod
+      - run: go test -v ./...
+
       - name: Dependabot metadata
         id: metadata
         uses: dependabot/fetch-metadata@v2
