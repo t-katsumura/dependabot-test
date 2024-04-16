@@ -8,4 +8,5 @@ func TestXxx(t *testing.T) {
 		"bar": "BBB",
 	}
 	marshal(m)
+	t.Error("")
 }
