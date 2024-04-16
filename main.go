@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/justinas/alice"
+	"github.com/vmihailenco/msgpack/v5"
 	"gopkg.in/yaml.v3"
 )
 
@@ -21,5 +21,5 @@ func main() {
 		"bar": "BBB",
 	}
 	marshal(m)
-	alice.New()
+	msgpack.Marshal(m)
 }
