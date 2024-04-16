@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/justinas/alice"
 	"gopkg.in/yaml.v3"
 )
 
@@ -20,4 +21,5 @@ func main() {
 		"bar": "BBB",
 	}
 	marshal(m)
+	alice.New()
 }
